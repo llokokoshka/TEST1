@@ -1,0 +1,27 @@
+    {{#if all}}
+    <ul>
+     {{#each all}}
+        <li>
+            <form action="/complete" method="post">
+                <label>
+                    <h2>{{name}}</h2>
+                        {{#each questions}}
+                        <h4>{{this.textOfQuestion}}</h4>
+                        <h5>{{this.answers}}</h5>
+                        <img src = "{{this.imageSrc}}">
+                        <div class="input-field">
+                        <input type="text" name="answer" placeholder="Ответ">
+                        </div>
+                        {{/each}}    
+                    <input type="hidden" value="{{id}}" name="id">
+                    <button type="submit" class="btn">ОК</button>
+                </label>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>Тестов нет!</p>
+    {{/if}}
+    
+    

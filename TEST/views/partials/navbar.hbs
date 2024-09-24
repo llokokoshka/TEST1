@@ -1,0 +1,32 @@
+ <nav class="deep-orange darken-4">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Тесты</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        {{#if isIndex}}
+        <li class="active"><a href="/">Тесты</a></li>
+        {{else}}
+         <li><a href="/">Тесты</a></li>
+        {{/if}}
+
+         {{#if isCreate}}
+        <li class="active"><a href="/create">Создание</a></li>
+        {{else}}
+        <li><a href="/create">Создание</a></li>
+        {{/if}}
+
+        {{#if isNews}}
+        <li class="active"><a href="/news">Новости</a></li>
+        {{else}}
+        <li><a href="/news">Новости</a></li>
+        {{/if}}
+
+        {{#if isPhoto}}
+        <li class="active"><a href="/photo">Фото</a></li>
+        {{else}}
+        <li><a href="/photo">Фото</a></li>
+        {{/if}}
+
+      </ul>
+    </div>
+  </nav>

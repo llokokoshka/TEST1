@@ -1,0 +1,18 @@
+<h3>Фото</h3>
+{{#if photoss}}
+<ul>
+{{#each photoss}}
+       <form action="/CreatePhotoss" method="post">
+        <label>
+            <img src = "{{imageSrc}}">
+        </label>
+        <br><br>
+{{/each}}
+<button type="submit" class="btn">Добавить фото</button></form>
+</ul>
+{{else}}
+<form action="/CreatePhotoss" method="post">
+<p>Фотографий нет!</p>
+<button type="submit" class="btn">Добавить фото</button>
+</form>
+{{/if}}

@@ -1,0 +1,25 @@
+<h3>Новости</h3>
+{{#if newss}}
+<ul>
+{{#each newss}}
+    <form action="/CreateNewss" method="post">
+        <label>
+             <h2>
+                {{Header}}
+            </h2>
+            <h4>
+                {{textofNews}}
+            </h4>
+            <img src = "{{imageSrc}}">
+        </label>
+        <br><br>
+        
+{{/each}}
+<button type="submit" class="btn">Создать новость</button></form>
+</ul>
+{{else}}
+<form action="/CreateNewss" method="post">
+<p>Новостей нет!</p>
+<button type="submit" class="btn">Создать новость</button>
+</form>
+{{/if}}

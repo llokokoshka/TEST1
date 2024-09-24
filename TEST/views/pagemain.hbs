@@ -1,0 +1,17 @@
+<h3>Тесты</h3>
+{{#if all}}
+<ul>
+{{#each all}}
+    <form action="/" method="post">
+        <button type="submit" class="btn">{{name}}</button>
+         <input type="hidden" value="{{id}}" name="id">
+    </form>
+{{/each}}
+</ul>
+{{else}}
+<p>Тестов нет!</p>
+{{/if}}
+<script>
+  //function Name 
+     //<h5><a href="/tests" >{{name}}</a></h5>
+</script>

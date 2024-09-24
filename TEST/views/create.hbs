@@ -1,0 +1,67 @@
+<form action="/create" method="POST" enctype="multipart/form-data">
+<h2>Создание тестов</h2>
+
+    <div id="divf">
+        <div class="input-field">
+            <input id="text" type="text" name="name" placeholder="Имя теста"  onchange= readonly>
+        </div>
+
+        <div class="input-field">
+            <input type="text" name="questions" placeholder="Текст вопроса">
+        </div>
+
+        <div class="input-field">
+            <input type="text" name="answers" placeholder="Текст ответа">
+        </div>
+
+        <div class="input-field">
+            <input type="text" name="answer" placeholder="Правильный ответ">
+        </div> 
+         
+        <input type="file" name="filedata" accept="image/*" id="fileId" value="ooo.jpg"/> <br><br>
+
+    </div>
+<button type="submit" class="btn" onclick="check()">Создать</button>
+<button type="button"  class="btn" onclick="plus()">Добавить вопрос</button>
+
+</form>
+
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>
+var n = 0;
+
+$('#btn-1').click(function(){
+        $('#text').prop('disabled', true);
+	
+});
+
+$('#btn-2').click(function(){
+	$('#text').prop('disabled', false);
+});
+//
+
+
+async function plus(){
+
+n++;   
+//"<pre>"+document.getElementById('divf').innerHTML.replace(/</g,"&lt;") + "</pre>";
+document.getElementById('divf').innerHTML+='<br> <div class=\"input-field\"> <input type=\"text\" name=\"questions\" placeholder=\"Текст вопроса\" > </div><div class=\"input-field\"> <input type=\"text\" name=\"answers\" placeholder=\"Текст ответа\"> </div><div class=\"input-field\"><input type=\"text\" name=\"answer\" placeholder=\"Правильный ответ\" > </div><input type=\"file\" name=\"filedata\" accept=\"image/*\"> <br><br> '
+}
+function minus(){  
+   if (n != 0)
+   {  
+      n--;
+       document.getElementById('divf').innerHTML-=' <div class=\"input-field\"> <input type=\"text\" name=\"questions\" placeholder=\"Текст вопроса\" > </div><div class=\"input-field\"> <input type=\"text\" name=\"answers\" placeholder=\"Текст ответа\"> </div><div class=\"input-field\"><input type=\"text\" name=\"answer\" placeholder=\"Правильный ответ\" ></div>'
+    
+        }
+}
+async function check(){
+    if (n<2)
+    {
+        alert("Количество вопросов слишком мало! Минимальное количество вопросов - 3!");
+        res.redirect("/create")
+    }
+    
+}
+</script>
+
